@@ -48,10 +48,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const cardsContainer = document.getElementById("newSeriesCards");
 
         series.forEach((serie) => {
+            const {id} = serie;
             cardsContainer.innerHTML += `
                 <div class="col">
-                    <div class="card">
-                        <img src="${baseImageUrl}${serie.poster_path}" class="card-img-top" alt="${serie.name}">
+                    <div class="card">  
+                        <a href="./detalhes.html?id=${id}"><img src="${baseImageUrl}${serie.poster_path}" class="card-img-top" alt="${serie.name}"></a>
                         <div class="card-body">
                             <h5 class="card-title">${serie.name}</h5>
                             <p>${serie.overview || "Descrição indisponível."}</p>
