@@ -1,0 +1,35 @@
+{
+    "usuarios": [
+        {
+            "id": 1,
+            "nome": "Pedro Henrique Cardoso Maia",
+            "idade": 19,
+            "curso": "Ciência da computação",
+            "email": "pedro.maia.1543726@sga.pucminas.br",
+            "github": "https://github.com/pedro-maia1337",
+            "biografia": "Pedro Henrique Cardoso Maia, tenho 19 anos e sou estudante de Ciência da Computação pela PUC Minas",
+            "turno": "Manhã"
+        }
+    ],
+
+    
+    "series_preferidas": [
+        {
+            "id": 1,
+            "serie_id": 121361,
+            "usuario_id": 101
+        },
+        {
+            "id": 2,
+            "serie_id": 169,
+            "usuario_id": 102
+        },
+        {
+            "id": 3,
+            "serie_id": 71993,
+            "usuario_id": 103
+        }
+    ]
+      
+      
+}

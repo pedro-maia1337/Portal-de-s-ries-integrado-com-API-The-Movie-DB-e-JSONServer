@@ -1,0 +1,254 @@
+* {
+    font-family: Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    font-family: "DM Sans", sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.cta button {
+    padding: 9px 25px;
+    background-color: #0D0D0D;
+    border: none;
+    color: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.cta button i {
+    margin-left: 8px;
+    vertical-align: middle;
+    font-size: 18px;
+}
+
+.cta button:hover {
+    background-color: #404040;
+}
+
+.title-section {
+    padding: 10px 10%;
+    font-weight: bold;
+    font-size: 28px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.selector-for-some-widget {
+    box-sizing: content-box;
+}
+
+.carouselPai {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carouselDiv {
+    padding: 0px 50px;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-item h5 {
+    font-weight: bold;
+}
+
+.card-title {
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #D9D9D9;
+}
+
+.aluno-info {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.linha {
+    margin-right: 20px;
+}
+
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
+.info-sobre {
+    flex: 2;
+}
+
+.info-sobre h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+
+.info-autor {
+    flex: 1;
+    text-align: left;
+}
+
+.info-autor h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.info-autor ul {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.info-autor ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.info-autor ul li i {
+    margin-right: 8px;
+}
+
+
+.redes-sociais a {
+    color: #000;
+    font-size: 20px;
+    margin-right: 35px;
+    text-decoration: none;
+}
+
+.redes-sociais a:hover {
+    color: #737373;
+}
+
+
+@media (max-width: 1024px) {
+    header {
+        padding: 20px 5%;
+    }
+
+    .cta button {
+        padding: 7px 20px;
+        font-size: 16px;
+    }
+
+    .carouselDiv {
+        padding: 0px 30px;
+    }
+
+    .aluno-info {
+        max-width: 90%;
+    }
+
+    .info-container {
+        flex-direction: column;
+    }
+
+    .info-autor {
+        text-align: center;
+    }
+
+    .info-autor ul li {
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 5%;
+    }
+
+    .cta button {
+        padding: 5px 15px;
+        font-size: 14px;
+    }
+
+    .title-section {
+        font-size: 24px;
+    }
+
+    .carouselDiv {
+        padding: 0px 20px;
+    }
+
+    .aluno-info {
+        max-width: 100%;
+    }
+
+    .info-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-sobre h3 {
+        font-size: 18px;
+    }
+
+    .info-autor ul li {
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        padding: 10px 5%;
+    }
+
+    .cta button {
+        padding: 4px 10px;
+        font-size: 12px;
+    }
+
+    .title-section {
+        font-size: 20px;
+    }
+
+    .carouselDiv {
+        padding: 0px 10px;
+    }
+
+    .aluno-info {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .info-sobre h3 {
+        font-size: 16px;
+    }
+
+    .info-autor h3 {
+        font-size: 16px;
+    }
+
+    .info-autor ul li {
+        font-size: 12px;
+    }
+
+    .redes-sociais a {
+        font-size: 16px;
+        margin-right: 20px;
+    }
+}
