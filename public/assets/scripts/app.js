@@ -24,11 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         series.forEach((serie, index) => {
             const activeClass = index === 0 ? "active" : "";
+            const {id} = serie;
 
             // Adiciona um item ao carrossel
             carouselInner.innerHTML += `
-                <div class="carousel-item ${activeClass}">
-                    <img src="${baseImageUrl}${serie.backdrop_path}" class="d-block w-100" alt="${serie.name}">
+                <div class="carousel-item ${activeClass}"> 
+                    <a href="./detalhes.html?id=${id}"><img src="${baseImageUrl}${serie.backdrop_path}" class="d-block w-100" alt="${serie.name}"></a>
                     <div class="carousel-caption d-none d-md-block">
                         <h5>${serie.name}</h5>
                     </div>
