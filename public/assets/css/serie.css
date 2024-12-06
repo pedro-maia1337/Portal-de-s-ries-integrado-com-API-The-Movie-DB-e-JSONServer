@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     font-family: "DM Sans", sans-serif;
+    
 }
 
 header {
@@ -45,13 +46,13 @@ header {
 
 .visao-container {
     padding: 10px 10%;
+    
 }
 
 .card-visao {
-    background-image: url('../img/cardP/succession-s4-ka-1920_0.jpeg');
     background-size: cover;
     background-position: center;
-    color: #ffffff;
+    color: #0D0D0D;
     border-radius: 8px;
     padding: 20px;
     max-width: 1550px;

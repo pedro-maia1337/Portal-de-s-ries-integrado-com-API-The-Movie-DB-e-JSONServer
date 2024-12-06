@@ -110,7 +110,7 @@ function filterSeries(series) {
 // Aplicar filtros ao clicar no botão
 applyFiltersButton.addEventListener('click', async () => {
     try {
-        const response = await fetch(`${BASE_URL}/tv/top_rated?api_key=${API_KEY}&language=pt-BR`);
+        const response = await fetch(`${BASE_URL}/tv/top_rated?api_key=${API_KEY}&language=pt-BR&page=3`);
         const data = await response.json();
         const filteredSeries = filterSeries(data.results);
         displaySeries(filteredSeries);

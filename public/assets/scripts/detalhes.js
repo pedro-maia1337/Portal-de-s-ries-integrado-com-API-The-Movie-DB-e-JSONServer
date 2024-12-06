@@ -58,7 +58,6 @@ async function renderSerieDetails() {
         `;
         document.querySelector('.sinopse span:last-child').textContent = serieData.overview || 'Sinopse indisponível.';
         // Atualize a plataforma se disponível (substitua por lógica real caso a API suporte)
-        document.querySelector('.platform-info img').src = 'src/img/logo/hbo-max-logo-1.svg';
     }
 }
 
