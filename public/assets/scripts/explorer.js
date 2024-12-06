@@ -19,7 +19,7 @@ ratingRange.addEventListener('input', () => {
 // Função para buscar séries populares
 async function fetchPopularSeries() {
     try {
-        const response = await fetch(`${BASE_URL}/tv/top_rated?api_key=${API_KEY}&language=pt-BR`);
+        const response = await fetch(`${BASE_URL}/tv/top_rated?api_key=${API_KEY}&language=pt-BR&page=3`);
         const data = await response.json();
         populateFilters(data.results); // Preencher filtros
         displaySeries(data.results);  // Exibir séries
