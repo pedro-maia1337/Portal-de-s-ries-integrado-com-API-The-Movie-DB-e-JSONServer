@@ -16,17 +16,17 @@
     "series_preferidas": [
         {
             "id": 1,
-            "serie_id": 121361,
+            "serie_id": 1396,
             "usuario_id": 101
         },
         {
             "id": 2,
-            "serie_id": 169,
+            "serie_id": 94954,
             "usuario_id": 102
         },
         {
             "id": 3,
-            "serie_id": 71993,
+            "serie_id": 94605,
             "usuario_id": 103
         }
     ]
