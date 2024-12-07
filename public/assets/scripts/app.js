@@ -115,8 +115,8 @@ document.addEventListener("DOMContentLoaded", () => {
     function createSerieCard(serie) {
         const { name, poster_path } = serie;
         return `
-            <div class="col">
-                <div class="card">
+            <div class="carouselPai">
+                <div class="carouselDiv">
                     <img src="${poster_path ? baseImageUrl + poster_path : 'src/img/placeholder.png'}" class="card-img-top" alt="${name}">
                     <div class="card-body">
                         <h5 class="card-title">${name}</h5>
