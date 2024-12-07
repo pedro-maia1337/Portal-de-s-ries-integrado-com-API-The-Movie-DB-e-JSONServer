@@ -19,7 +19,7 @@ ratingRange.addEventListener('input', () => {
 // Função para buscar séries populares
 async function fetchPopularSeries() {
     try {
-        const response = await fetch(`${BASE_URL}/tv/top_rated?api_key=${API_KEY}&language=pt-BR`);
+        const response = await fetch(`${BASE_URL}/tv/top_rated?api_key=${API_KEY}&language=pt-BR&page=3`);
         const data = await response.json();
         populateFilters(data.results); // Preencher filtros
         displaySeries(data.results);  // Exibir séries
@@ -78,15 +78,15 @@ function displaySeries(series) {
     series.forEach(serie => {
         const { id, name, overview, poster_path } = serie; // Inclua o 'id' aqui
         const card = `
-            <div class="col">
-                <div class="card">
-                    <a href="./detalhes.html?id=${id}"><img src="${poster_path ? IMAGE_BASE_URL + poster_path : 'assets/img/placeholder.png'}" class="card-img-top" alt="${name}"></a>
-                    <div class="card-body">
-                        <h5 class="card-title">${name}</h5>
-                        <p class="card-text">${overview || 'Descrição indisponível.'}</p>
-                    </div>
+                <div class="col">
+                    <div class="card">
+                        <a href="./detalhes.html?id=${id}"><img src="${poster_path ? IMAGE_BASE_URL + poster_path : 'assets/img/placeholder.png'}" class="card-img-top" alt="${name}"></a>
+                        <div class="card-body">
+                            <h5 class="card-title">${name}</h5>
+                            <p class="card-text">${overview || 'Descrição indisponível.'}</p>
+                        </div>
                 </div>
-            </div>
+    
         `;
         seriesContainer.insertAdjacentHTML('beforeend', card);
     });
@@ -110,7 +110,7 @@ function filterSeries(series) {
 // Aplicar filtros ao clicar no botão
 applyFiltersButton.addEventListener('click', async () => {
     try {
-        const response = await fetch(`${BASE_URL}/tv/top_rated?api_key=${API_KEY}&language=pt-BR`);
+        const response = await fetch(`${BASE_URL}/tv/top_rated?api_key=${API_KEY}&language=pt-BR&page=3`);
         const data = await response.json();
         const filteredSeries = filterSeries(data.results);
         displaySeries(filteredSeries);

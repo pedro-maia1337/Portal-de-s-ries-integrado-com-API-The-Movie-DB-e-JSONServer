@@ -12,6 +12,7 @@ header {
     padding: 30px 10%;
 }
 
+
 .logo {
     cursor: pointer;
 }
@@ -55,6 +56,7 @@ header {
 .card-container {
     width: 100%; 
     max-width: 1000px; 
+    margin-left: 200px;
 }
 
 .filters {
@@ -76,6 +78,7 @@ header {
     font-weight: bold;
     margin-bottom: 8px;
 }
+
 
 #genre-select, 
 #year-select, 
@@ -145,6 +148,9 @@ header {
 #apply-filters:hover {
     background-color: #404040;
 }
+
+/* Centraliza os cards no meio da tela */
+
 
 
 @media (max-width: 1024px) {

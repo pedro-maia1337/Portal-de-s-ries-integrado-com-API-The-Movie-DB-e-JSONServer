@@ -1,6 +1,7 @@
 // Configuração da API
 const apiKey = '3aae4720d254f3a5673c432ce502684e'; // Substitua pela sua chave da API do The Movie DB
 const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
+const FAVORITES_API_URL = 'http://localhost:3000/series_preferidas';
 
 // Obtém o ID da série a partir da URL
 function getSerieIdFromUrl() {
@@ -58,7 +59,6 @@ async function renderSerieDetails() {
         `;
         document.querySelector('.sinopse span:last-child').textContent = serieData.overview || 'Sinopse indisponível.';
         // Atualize a plataforma se disponível (substitua por lógica real caso a API suporte)
-        document.querySelector('.platform-info img').src = 'src/img/logo/hbo-max-logo-1.svg';
     }
 }
 
@@ -107,12 +107,61 @@ async function renderSeasonEpisodes(seasonNumber = 1) {
 
 
 // Evento de seleção de temporada
+// Evento de seleção de temporada
 function setupSeasonSelection() {
     const seasonButton = document.querySelector('.season-select button');
+
+    if (!seasonButton) {
+        console.error('Botão de seleção de temporada não encontrado.');
+        return; // Não tenta adicionar evento se o botão não existe
+    }
+
     seasonButton.addEventListener('click', async () => {
         const seasonNumber = prompt('Digite o número da temporada:');
         if (seasonNumber) {
             await renderSeasonEpisodes(seasonNumber);
+        }
+    });
+}
+
+
+async function addFavoriteSerie(serieId) {
+    const usuarioId = 1; // Substitua pelo ID do usuário real, se necessário.
+    const favoriteData = {
+        serie_id: serieId,
+        usuario_id: usuarioId
+    };
+
+    try {
+        const response = await fetch(FAVORITES_API_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(favoriteData)
+        });
+
+        if (response.ok) {
+            alert('Série adicionada aos favoritos com sucesso!');
+        } else {
+            throw new Error('Erro ao adicionar série aos favoritos.');
+        }
+    } catch (error) {
+        console.error('Erro:', error);
+        alert('Ocorreu um erro ao favoritar a série. Tente novamente.');
+    }
+}
+
+// Configurar evento no botão
+function setupFavoriteButton() {
+    const favoriteButton = document.getElementById('favorite-btn');
+    const serieId = getSerieIdFromUrl();
+
+    favoriteButton.addEventListener('click', () => {
+        if (serieId) {
+            addFavoriteSerie(serieId);
+        } else {
+            alert('ID da série não encontrado.');
         }
     });
 }
@@ -122,7 +171,9 @@ async function init() {
     await renderSerieDetails();
     await renderSerieCast();
     await renderSeasonEpisodes(); // Renderiza a primeira temporada por padrão
-    setupSeasonSelection();
+    setupSeasonSelection(); // Configura o evento de seleção de temporada
+    setupFavoriteButton(); // Configura o botão de favoritar
 }
 
 window.onload = init;
+

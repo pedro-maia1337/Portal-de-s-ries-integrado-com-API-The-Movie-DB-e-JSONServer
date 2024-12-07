@@ -47,10 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const cardsContainer = document.getElementById("newSeriesCards");
 
         series.forEach((serie) => {
+            const {id} = serie;
             cardsContainer.innerHTML += `
                 <div class="col">
-                    <div class="card">
-                        <img src="${baseImageUrl}${serie.poster_path}" class="card-img-top" alt="${serie.name}">
+                    <div class="card"> 
+                         <a href="./detalhes.html?id=${id}"><img src="${baseImageUrl}${serie.poster_path}" class="card-img-top" alt="${serie.name}"></a>
                         <div class="card-body">
                             <h5 class="card-title">${serie.name}</h5>
                             <p>${serie.overview || "Descrição indisponível."}</p>
@@ -113,11 +114,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Função para criar o HTML do card da série
     function createSerieCard(serie) {
-        const { name, poster_path } = serie;
+        const {id, name, poster_path } = serie;
         return `
-            <div class="carouselPai">
-                <div class="carouselDiv">
-                    <img src="${poster_path ? baseImageUrl + poster_path : 'src/img/placeholder.png'}" class="card-img-top" alt="${name}">
+            <div class="col">
+                <div class="card">
+                    <a href="./detalhes.html?id=${id}"><img src="${poster_path ? baseImageUrl + poster_path : 'src/img/placeholder.png'}" class="card-img-top" alt="${name}"></a>
                     <div class="card-body">
                         <h5 class="card-title">${name}</h5>
                     </div>
